@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dspccbgimg7yb"]
+
+[ext_resource type="Texture2D" uid="uid://7arokx0jgx27" path="res://icon.svg" id="1_53i6w"]
+[ext_resource type="Script" uid="uid://dxn6yc12ov73b" path="res://src/escenas/cinta.gd" id="1_qky5x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53i6w"]
+size = Vector3(3, 0.1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rxdua"]
+size = Vector3(3, 0.1, 10)
+
+[sub_resource type="Shader" id="Shader_bb845"]
+code = "shader_type spatial;
+
+uniform float speed : hint_range(0.0, 10.0) = 1.0;
+uniform sampler2D albedo_texture : source_color;
+
+void fragment() {
+    vec2 uv_moved = UV;
+    uv_moved.y -= TIME * speed;
+    vec4 tex_color = texture(albedo_texture, uv_moved);
+    ALBEDO = tex_color.rgb;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ums1p"]
+render_priority = 0
+shader = SubResource("Shader_bb845")
+shader_parameter/speed = 1.0
+shader_parameter/albedo_texture = ExtResource("1_53i6w")
+
+[node name="Cinta" type="Node3D"]
+script = ExtResource("1_qky5x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_53i6w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_rxdua")
+surface_material_override/0 = SubResource("ShaderMaterial_ums1p")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_53i6w")
