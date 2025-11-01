@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://kviguekccv7u"]
 
 [ext_resource type="PackedScene" uid="uid://dspccbgimg7yb" path="res://src/escenas/cinta.tscn" id="1_p21c5"]
-[ext_resource type="PackedScene" uid="uid://bq5rufsyryekk" path="res://src/escenas/pieza.tscn" id="2_nulfw"]
+[ext_resource type="PackedScene" uid="uid://b5vhso4boyumu" path="res://src/escenas/iman_de_pieza.tscn" id="3_kxecg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nulfw"]
 
@@ -15,7 +15,7 @@ sky = SubResource("Sky_kxecg")
 [node name="Mapa" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1597115, 1.0046401, 6.1729317)
+transform = Transform3D(0.05732011, 0, 0.99835587, 0, 1, 0, -0.99835587, 0, 0.05732011, 5.347779, 1.8179715, -0.04567337)
 
 [node name="Empujador" type="Node3D" parent="."]
 
@@ -27,8 +27,11 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 
 [node name="Cinta2" parent="." instance=ExtResource("1_p21c5")]
 
-[node name="Pieza" parent="." instance=ExtResource("2_nulfw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08300972, 0.5590997, 3.9792936)
+[node name="iman_de_pieza4" parent="." instance=ExtResource("3_kxecg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007784605, 0.59951687, 2.775175)
 
-[node name="Pieza2" parent="." instance=ExtResource("2_nulfw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22117937, 1.9496233, 3.7636437)
+[node name="iman_de_pieza2" parent="." instance=ExtResource("3_kxecg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11777663, 1.7860317, -1.1486917)
+
+[node name="iman_de_pieza3" parent="." instance=ExtResource("3_kxecg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01556921, 1.1990337, 0.6956835)
