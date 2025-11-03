@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://kviguekccv7u"]
+[gd_scene load_steps=13 format=3 uid="uid://kviguekccv7u"]
 
 [ext_resource type="PackedScene" uid="uid://dspccbgimg7yb" path="res://src/escenas/cinta.tscn" id="1_p21c5"]
-[ext_resource type="PackedScene" uid="uid://b5vhso4boyumu" path="res://src/escenas/iman_de_pieza.tscn" id="3_kxecg"]
 [ext_resource type="PackedScene" uid="uid://4u1mf1heecx3" path="res://src/escenas/suelo.tscn" id="3_nttpt"]
 [ext_resource type="PackedScene" uid="uid://bfxuv1u3jpk4l" path="res://src/escenas/iman_de_cinta.tscn" id="4_m1spo"]
 [ext_resource type="PackedScene" uid="uid://dg86l1ochrt4n" path="res://src/escenas/boton.tscn" id="5_m1spo"]
 [ext_resource type="Script" uid="uid://c0mmfygk4lwja" path="res://src/escenas/boton.gd" id="6_veu8s"]
 [ext_resource type="Script" uid="uid://crxw3hh8hr5nj" path="res://src/escenas/boton2.gd" id="7_e0j3v"]
 [ext_resource type="Script" uid="uid://b7e2upyhty7sa" path="res://src/escenas/boton3.gd" id="7_hoawt"]
+[ext_resource type="PackedScene" uid="uid://btivvyu0y3vkr" path="res://src/escenas/lector.tscn" id="9_8wf2n"]
+[ext_resource type="PackedScene" uid="uid://bq5rufsyryekk" path="res://src/escenas/pieza.tscn" id="9_hoawt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nulfw"]
 
@@ -20,43 +21,66 @@ sky = SubResource("Sky_kxecg")
 
 [node name="Mapa" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.05732011, 0, 0.99835587, 0, 1, 0, -0.99835587, 0, 0.05732011, 5.347779, 1.8179715, -0.04567337)
-
-[node name="Empujador" type="Node3D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_nttpt")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4606836, 0)
+[node name="Lector" parent="." instance=ExtResource("9_8wf2n")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 3.9988885, -0.66143143, 0)
+collision_layer = 3
 
 [node name="Cinta2" parent="." instance=ExtResource("1_p21c5")]
 
 [node name="Suelo" parent="." instance=ExtResource("3_nttpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6888824, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6888824, -2.3175597, 0)
 
-[node name="iman_de_pieza" parent="." instance=ExtResource("3_kxecg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.079606, 0.6194593, 0.4463755)
+[node name="Node3D2" parent="Suelo" instance=ExtResource("4_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.002809, 2.5175598, 0.13092923)
 
-[node name="Node3D" parent="." instance=ExtResource("4_m1spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.224, 0.1, 0)
+[node name="Node3D" parent="Suelo" instance=ExtResource("4_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4648824, 2.4175596, 0)
 visible = false
 
-[node name="boton" parent="." instance=ExtResource("5_m1spo")]
+[node name="Piezas" type="Node3D" parent="."]
+
+[node name="RigidBody3D" parent="Piezas" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075924754, 0.6779213, 9.042305)
+collision_layer = 3
+color_tag = "rojo"
+
+[node name="RigidBody3D2" parent="Piezas" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068498075, 0.6914251, 2.859892)
+collision_layer = 3
+color_tag = "blanco"
+
+[node name="RigidBody3D3" parent="Piezas" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0407805, 2.1380076, 0.42804503)
+collision_layer = 3
+color_tag = "blanco"
+
+[node name="RigidBody3D4" parent="Piezas" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09908837, 0.3847655, 6.0397997)
+collision_layer = 3
+color_tag = "rojo"
+
+[node name="Botones" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6768575, 0, 0)
+
+[node name="boton" parent="Botones" instance=ExtResource("5_m1spo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5131767, -1.4911277)
 script = ExtResource("6_veu8s")
 
-[node name="boton2" parent="." instance=ExtResource("5_m1spo")]
+[node name="boton2" parent="Botones" instance=ExtResource("5_m1spo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5392284, 0.8461803)
 script = ExtResource("7_hoawt")
 
-[node name="boton3" parent="." instance=ExtResource("5_m1spo")]
+[node name="boton3" parent="Botones" instance=ExtResource("5_m1spo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.078457, -0.5204456)
 script = ExtResource("7_e0j3v")
 
-[node name="iman_de_pieza3" parent="." instance=ExtResource("3_kxecg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07238245, 1.2389185, 2.478524)
+[node name="Cosas_del_mapa" type="Node3D" parent="."]
 
-[node name="iman_de_pieza2" parent="." instance=ExtResource("3_kxecg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036191225, 0.6194593, -0.26755124)
+[node name="Camera3D" type="Camera3D" parent="Cosas_del_mapa"]
+transform = Transform3D(-0.0026004727, 0, -0.99999666, 0, 1, 0, 0.99999666, 0, -0.0026004727, -6.225597, 1.8179715, -0.04567337)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Cosas_del_mapa"]
+environment = SubResource("Environment_nttpt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Cosas_del_mapa"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4606836, 0)

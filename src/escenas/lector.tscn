@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://btivvyu0y3vkr"]
+
+[ext_resource type="Script" uid="uid://uhawy31tlnus" path="res://src/escenas/area_3d.gd" id="1_gtxco"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kqljf"]
+size = Vector3(1, 5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gtxco"]
+size = Vector3(1, 1, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_are13"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5judi"]
+material = SubResource("ShaderMaterial_are13")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_are13"]
+size = Vector3(1, 10.19165, 1)
+
+[node name="Lector" type="StaticBody3D"]
+
+[node name="Estructura1" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_kqljf")
+skeleton = NodePath("../Estructura2")
+
+[node name="Estructura2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 2)
+mesh = SubResource("BoxMesh_gtxco")
+
+[node name="Lector" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+mesh = SubResource("BoxMesh_5judi")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+script = ExtResource("1_gtxco")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50842285, 4)
+shape = SubResource("BoxShape3D_are13")
+debug_color = Color(0.9098039, 0.20784314, 0, 0.41960785)
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

@@ -1,17 +1,23 @@
 extends RigidBody3D
 
-@export var magnetic_sensitivity: float = 1.0
-var magnetized: bool = false
-var magnet_source: Vector3
+@export var max_magnetic_force: float = 30.0
+@export var min_distance: float = 70
 
-func apply_magnetic_force(source_position: Vector3, strength: float):
-	var direction = (source_position - global_transform.origin)
+func apply_magnetic_force(target_position: Vector3, strength: float):
+	var direction = target_position - global_transform.origin
 	var distance = direction.length()
-	if distance < 2.0: # rango efectivo
-		magnetized = true
-		direction = direction.normalized()
-		var force = direction * strength * magnetic_sensitivity / max(distance, 0.1)
-		apply_central_force(force)
 
-func detach():
-	magnetized = false
+	# Evita división por cero
+	if distance < 0.01:
+		return
+
+	# Calcular fuerza con atenuación
+	var force_strength = clamp(strength / (distance * distance), 0, max_magnetic_force)
+
+	# Evita aplicar fuerza si ya está muy cerca (para reducir solapamiento)
+	if distance > min_distance:
+		var force = direction.normalized() * force_strength
+		apply_central_force(force)
+	else:
+		# Si está muy cerca, "corrige" la posición suavemente
+		global_transform.origin = global_transform.origin.lerp(target_position, 0.1)
