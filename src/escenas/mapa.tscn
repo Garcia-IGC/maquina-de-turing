@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://kviguekccv7u"]
+[gd_scene load_steps=12 format=3 uid="uid://kviguekccv7u"]
 
 [ext_resource type="PackedScene" uid="uid://dspccbgimg7yb" path="res://src/escenas/cinta.tscn" id="1_p21c5"]
 [ext_resource type="PackedScene" uid="uid://b5vhso4boyumu" path="res://src/escenas/iman_de_pieza.tscn" id="3_kxecg"]
+[ext_resource type="PackedScene" uid="uid://4u1mf1heecx3" path="res://src/escenas/suelo.tscn" id="3_nttpt"]
+[ext_resource type="PackedScene" uid="uid://bfxuv1u3jpk4l" path="res://src/escenas/iman_de_cinta.tscn" id="4_m1spo"]
+[ext_resource type="PackedScene" uid="uid://dg86l1ochrt4n" path="res://src/escenas/boton.tscn" id="5_m1spo"]
+[ext_resource type="Script" uid="uid://c0mmfygk4lwja" path="res://src/escenas/boton.gd" id="6_veu8s"]
+[ext_resource type="Script" uid="uid://crxw3hh8hr5nj" path="res://src/escenas/boton2.gd" id="7_e0j3v"]
+[ext_resource type="Script" uid="uid://b7e2upyhty7sa" path="res://src/escenas/boton3.gd" id="7_hoawt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nulfw"]
 
@@ -27,11 +33,30 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 
 [node name="Cinta2" parent="." instance=ExtResource("1_p21c5")]
 
-[node name="iman_de_pieza4" parent="." instance=ExtResource("3_kxecg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007784605, 0.59951687, 2.775175)
+[node name="Suelo" parent="." instance=ExtResource("3_nttpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6888824, 0, 0)
 
-[node name="iman_de_pieza2" parent="." instance=ExtResource("3_kxecg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11777663, 1.7860317, -1.1486917)
+[node name="iman_de_pieza" parent="." instance=ExtResource("3_kxecg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.079606, 0.6194593, 0.4463755)
+
+[node name="Node3D" parent="." instance=ExtResource("4_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.224, 0.1, 0)
+visible = false
+
+[node name="boton" parent="." instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5131767, -1.4911277)
+script = ExtResource("6_veu8s")
+
+[node name="boton2" parent="." instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5392284, 0.8461803)
+script = ExtResource("7_hoawt")
+
+[node name="boton3" parent="." instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.078457, -0.5204456)
+script = ExtResource("7_e0j3v")
 
 [node name="iman_de_pieza3" parent="." instance=ExtResource("3_kxecg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01556921, 1.1990337, 0.6956835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07238245, 1.2389185, 2.478524)
+
+[node name="iman_de_pieza2" parent="." instance=ExtResource("3_kxecg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036191225, 0.6194593, -0.26755124)
