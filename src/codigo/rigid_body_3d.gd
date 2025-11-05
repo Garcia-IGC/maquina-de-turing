@@ -3,6 +3,10 @@ extends RigidBody3D
 @export var max_magnetic_force: float = 30.0
 @export var min_distance: float = 70
 
+func _physics_process(delta):
+	# Si la velocidad es casi cero, duerme el cuerpo
+	pass
+
 func apply_magnetic_force(target_position: Vector3, strength: float):
 	var direction = target_position - global_transform.origin
 	var distance = direction.length()

@@ -34,6 +34,8 @@ shader_parameter/albedo_texture = ExtResource("1_53i6w")
 script = ExtResource("1_qky5x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D1" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_53i6w")
@@ -43,6 +45,8 @@ mesh = SubResource("BoxMesh_rxdua")
 surface_material_override/0 = SubResource("ShaderMaterial_ums1p")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_53i6w")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://btivvyu0y3vkr"]
+[gd_scene load_steps=8 format=3 uid="uid://btivvyu0y3vkr"]
 
-[ext_resource type="Script" uid="uid://uhawy31tlnus" path="res://src/escenas/area_3d.gd" id="1_gtxco"]
+[ext_resource type="Script" uid="uid://d4klkyfr5b2id" path="res://src/codigo/lector.gd" id="1_are13"]
+[ext_resource type="Script" uid="uid://uhawy31tlnus" path="res://src/codigo/area_3d (2).gd" id="1_gtxco"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kqljf"]
 size = Vector3(1, 5, 1)
@@ -17,6 +18,7 @@ material = SubResource("ShaderMaterial_are13")
 size = Vector3(1, 10.19165, 1)
 
 [node name="Lector" type="StaticBody3D"]
+script = ExtResource("1_are13")
 
 [node name="Estructura1" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_kqljf")

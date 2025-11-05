@@ -1,14 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://kviguekccv7u"]
+[gd_scene load_steps=19 format=3 uid="uid://kviguekccv7u"]
 
 [ext_resource type="PackedScene" uid="uid://dspccbgimg7yb" path="res://src/escenas/cinta.tscn" id="1_p21c5"]
+[ext_resource type="Script" uid="uid://27bwcrx2o10l" path="res://src/escenas/mapa.gd" id="1_updah"]
 [ext_resource type="PackedScene" uid="uid://4u1mf1heecx3" path="res://src/escenas/suelo.tscn" id="3_nttpt"]
 [ext_resource type="PackedScene" uid="uid://bfxuv1u3jpk4l" path="res://src/escenas/iman_de_cinta.tscn" id="4_m1spo"]
 [ext_resource type="PackedScene" uid="uid://dg86l1ochrt4n" path="res://src/escenas/boton.tscn" id="5_m1spo"]
-[ext_resource type="Script" uid="uid://c0mmfygk4lwja" path="res://src/escenas/boton.gd" id="6_veu8s"]
-[ext_resource type="Script" uid="uid://crxw3hh8hr5nj" path="res://src/escenas/boton2.gd" id="7_e0j3v"]
-[ext_resource type="Script" uid="uid://b7e2upyhty7sa" path="res://src/escenas/boton3.gd" id="7_hoawt"]
+[ext_resource type="Script" uid="uid://c0mmfygk4lwja" path="res://src/codigo/boton.gd" id="6_veu8s"]
+[ext_resource type="Script" uid="uid://crxw3hh8hr5nj" path="res://src/codigo/boton2.gd" id="7_e0j3v"]
+[ext_resource type="Script" uid="uid://b7e2upyhty7sa" path="res://src/codigo/boton3.gd" id="7_hoawt"]
 [ext_resource type="PackedScene" uid="uid://btivvyu0y3vkr" path="res://src/escenas/lector.tscn" id="9_8wf2n"]
 [ext_resource type="PackedScene" uid="uid://bq5rufsyryekk" path="res://src/escenas/pieza.tscn" id="9_hoawt"]
+[ext_resource type="Script" uid="uid://b4054p63mn0sp" path="res://src/codigo/boton4.gd" id="10_c48xo"]
+[ext_resource type="Script" uid="uid://dv4rnxyua2as2" path="res://src/escenas/boton5.gd" id="11_12y3n"]
+[ext_resource type="PackedScene" uid="uid://dujpodbpaiann" path="res://src/escenas/empujador.tscn" id="11_u3t0g"]
+[ext_resource type="Script" uid="uid://cyoe0exox0inp" path="res://src/escenas/boton6.gd" id="12_updah"]
+[ext_resource type="PackedScene" uid="uid://ccye87u7nb8vv" path="res://src/escenas/cajas_de_piezas.tscn" id="14_s8gsf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nulfw"]
 
@@ -20,9 +26,10 @@ background_mode = 2
 sky = SubResource("Sky_kxecg")
 
 [node name="Mapa" type="Node3D"]
+script = ExtResource("1_updah")
 
 [node name="Lector" parent="." instance=ExtResource("9_8wf2n")]
-transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 3.9988885, -0.66143143, 0)
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 3.9981859, -0.65410304, -0.0016429424)
 collision_layer = 3
 
 [node name="Cinta2" parent="." instance=ExtResource("1_p21c5")]
@@ -49,11 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068498075, 0.6914251, 2.859
 collision_layer = 3
 color_tag = "blanco"
 
-[node name="RigidBody3D3" parent="Piezas" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0407805, 2.1380076, 0.42804503)
-collision_layer = 3
-color_tag = "blanco"
-
 [node name="RigidBody3D4" parent="Piezas" instance=ExtResource("9_hoawt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09908837, 0.3847655, 6.0397997)
 collision_layer = 3
@@ -63,24 +65,54 @@ color_tag = "rojo"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6768575, 0, 0)
 
 [node name="boton" parent="Botones" instance=ExtResource("5_m1spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5131767, -1.4911277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5131767, -3.9233618)
 script = ExtResource("6_veu8s")
 
 [node name="boton2" parent="Botones" instance=ExtResource("5_m1spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5392284, 0.8461803)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5392284, -0.61231387)
 script = ExtResource("7_hoawt")
 
 [node name="boton3" parent="Botones" instance=ExtResource("5_m1spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.078457, -0.5204456)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.559173, -2.2387183)
 script = ExtResource("7_e0j3v")
+
+[node name="boton4" parent="Botones" instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032316446, 1.1256564, -2.3130517)
+script = ExtResource("10_c48xo")
+
+[node name="boton5" parent="Botones" instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032316446, 1.1256564, -3.9570518)
+script = ExtResource("11_12y3n")
+
+[node name="boton6" parent="Botones" instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032316446, 1.1256564, -0.08897138)
+script = ExtResource("12_updah")
 
 [node name="Cosas_del_mapa" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Cosas_del_mapa"]
-transform = Transform3D(-0.0026004727, 0, -0.99999666, 0, 1, 0, 0.99999666, 0, -0.0026004727, -6.225597, 1.8179715, -0.04567337)
+transform = Transform3D(-0.0026004727, 0, -0.99999666, 0, 1, 0, 0.99999666, 0, -0.0026004727, -6.380472, 1.6787553, -0.35792053)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Cosas_del_mapa"]
 environment = SubResource("Environment_nttpt")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Cosas_del_mapa"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4606836, 0)
+
+[node name="Empujador" parent="." instance=ExtResource("11_u3t0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.476899, 0.67880905, 0.041978717)
+direction = Vector3(-1, 0, 0)
+
+[node name="Empujador2" parent="." instance=ExtResource("11_u3t0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2344, 0.72450924, 3.0879827)
+distance_meters = 2.0
+speed = 2.0
+direction = Vector3(-1, 0, 0)
+
+[node name="Empujador3" parent="." instance=ExtResource("11_u3t0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4417086, 0.7400569, 3.137631)
+distance_meters = 2.0
+speed = 2.0
+
+[node name="cajas_de_piezas" parent="." instance=ExtResource("14_s8gsf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.6190383, 0.56597316, 3.016283)

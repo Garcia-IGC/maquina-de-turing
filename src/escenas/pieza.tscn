@@ -1,27 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq5rufsyryekk"]
+[gd_scene load_steps=6 format=3 uid="uid://bq5rufsyryekk"]
 
 [ext_resource type="PackedScene" uid="uid://b5vhso4boyumu" path="res://src/escenas/iman_de_pieza.tscn" id="1_5fejh"]
-[ext_resource type="Script" uid="uid://6rtkh07s2wop" path="res://src/escenas/pieza.gd" id="1_fkerq"]
+[ext_resource type="Script" uid="uid://6rtkh07s2wop" path="res://src/codigo/pieza.gd" id="1_fkerq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1frtb"]
 size = Vector3(1, 0.1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fejh"]
+size = Vector3(1, 0.10068359, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkerq"]
 size = Vector3(1, 0.1, 1)
 
 [node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 2
+mass = 0.05
 continuous_cd = true
 script = ExtResource("1_fkerq")
 
 [node name="iman_de_pieza" parent="." instance=ExtResource("1_5fejh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.113332614, 0)
+collision_mask = 2
+mass = 0.05
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_1frtb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0003417991, 0)
 shape = SubResource("BoxShape3D_5fejh")
 
-[node name="PinJoint3D" type="PinJoint3D" parent="."]
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="."]
 node_a = NodePath("..")
 node_b = NodePath("../iman_de_pieza")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11229032, 0)
+shape = SubResource("BoxShape3D_fkerq")

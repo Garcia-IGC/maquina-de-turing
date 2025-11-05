@@ -9,7 +9,7 @@ func _physics_process(delta):
 	for body in area.get_overlapping_bodies():
 		if body is RigidBody3D:
 			body.sleeping = false
-			body.apply_central_force(direction.normalized() * belt_speed * 500)
+			body.apply_central_force(direction.normalized() * belt_speed * 1)
 
 	for magnet in magnets:
 		magnet.translate(direction.normalized() * belt_speed * 1)

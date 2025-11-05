@@ -6,9 +6,10 @@
 height = 0.1
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ojfrb"]
-height = 0.15
+height = 0.1
 
 [node name="iman_de_pieza" type="RigidBody3D"]
+mass = 0.1
 script = ExtResource("1_3wrv1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
