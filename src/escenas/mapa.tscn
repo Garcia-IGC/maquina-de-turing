@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://kviguekccv7u"]
+[gd_scene load_steps=20 format=3 uid="uid://kviguekccv7u"]
 
 [ext_resource type="PackedScene" uid="uid://dspccbgimg7yb" path="res://src/escenas/cinta.tscn" id="1_p21c5"]
 [ext_resource type="Script" uid="uid://27bwcrx2o10l" path="res://src/escenas/mapa.gd" id="1_updah"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dujpodbpaiann" path="res://src/escenas/empujador.tscn" id="11_u3t0g"]
 [ext_resource type="Script" uid="uid://cyoe0exox0inp" path="res://src/escenas/boton6.gd" id="12_updah"]
 [ext_resource type="PackedScene" uid="uid://ccye87u7nb8vv" path="res://src/escenas/cajas_de_piezas.tscn" id="14_s8gsf"]
+[ext_resource type="Script" uid="uid://ba8rwvjssov5h" path="res://src/escenas/arduino.gd" id="16_s8gsf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nulfw"]
 
@@ -28,11 +29,18 @@ sky = SubResource("Sky_kxecg")
 [node name="Mapa" type="Node3D"]
 script = ExtResource("1_updah")
 
+[node name="Empujador2" parent="." instance=ExtResource("11_u3t0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5316734, 0.72450924, 3.0879827)
+distance_meters = 2.0
+speed = 2.0
+direction = Vector3(-1, 0, 0)
+
 [node name="Lector" parent="." instance=ExtResource("9_8wf2n")]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 3.9981859, -0.65410304, -0.0016429424)
 collision_layer = 3
 
 [node name="Cinta2" parent="." instance=ExtResource("1_p21c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0632868)
 
 [node name="Suelo" parent="." instance=ExtResource("3_nttpt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6888824, -2.3175597, 0)
@@ -46,23 +54,8 @@ visible = false
 
 [node name="Piezas" type="Node3D" parent="."]
 
-[node name="RigidBody3D" parent="Piezas" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075924754, 0.6779213, 9.042305)
-collision_layer = 3
-color_tag = "rojo"
-
-[node name="RigidBody3D2" parent="Piezas" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068498075, 0.6914251, 2.859892)
-collision_layer = 3
-color_tag = "blanco"
-
-[node name="RigidBody3D4" parent="Piezas" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09908837, 0.3847655, 6.0397997)
-collision_layer = 3
-color_tag = "rojo"
-
 [node name="Botones" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6768575, 0, 0)
+transform = Transform3D(0.059811592, 0, -0.99820966, 0, 1, 0, 0.99820966, 0, 0.059811592, 2.8337712, 0, -2.7531729)
 
 [node name="boton" parent="Botones" instance=ExtResource("5_m1spo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5131767, -3.9233618)
@@ -90,8 +83,20 @@ script = ExtResource("12_updah")
 
 [node name="Cosas_del_mapa" type="Node3D" parent="."]
 
+[node name="RigidBody3D3" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 6.117442)
+color_tag = "rojo"
+
+[node name="RigidBody3D2" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 0.99999315, -0.0037000896, 0, 0.0037000896, 0.99999315, -0.061574936, 0.32555085, 27.114193)
+color_tag = "blanco"
+
+[node name="RigidBody3D" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36383486, 0.07252765)
+color_tag = "rojo"
+
 [node name="Camera3D" type="Camera3D" parent="Cosas_del_mapa"]
-transform = Transform3D(-0.0026004727, 0, -0.99999666, 0, 1, 0, 0.99999666, 0, -0.0026004727, -6.380472, 1.6787553, -0.35792053)
+transform = Transform3D(-0.9990867, 0, -0.04273022, 0, 1, 0, 0.04273022, 0, -0.9990867, 0.31990147, 1.6787553, -7.516223)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Cosas_del_mapa"]
 environment = SubResource("Environment_nttpt")
@@ -99,20 +104,84 @@ environment = SubResource("Environment_nttpt")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Cosas_del_mapa"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4606836, 0)
 
-[node name="Empujador" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.476899, 0.67880905, 0.041978717)
-direction = Vector3(-1, 0, 0)
+[node name="RigidBody3D4" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 3.0997968)
+color_tag = "rojo"
 
-[node name="Empujador2" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2344, 0.72450924, 3.0879827)
+[node name="RigidBody3D5" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 9.0201)
+color_tag = "rojo"
+
+[node name="RigidBody3D6" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 12.096209)
+color_tag = "rojo"
+
+[node name="RigidBody3D7" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 15.047786)
+color_tag = "rojo"
+
+[node name="RigidBody3D8" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 18.050056)
+color_tag = "rojo"
+
+[node name="RigidBody3D9" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 21.044327)
+color_tag = "rojo"
+
+[node name="RigidBody3D10" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 24.030272)
+color_tag = "rojo"
+
+[node name="RigidBody3D11" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 36.11239)
+color_tag = "rojo"
+
+[node name="RigidBody3D12" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36383486, 30.067474)
+color_tag = "rojo"
+
+[node name="RigidBody3D13" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 33.09474)
+color_tag = "rojo"
+
+[node name="RigidBody3D14" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 39.015045)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 42.091152)
+color_tag = "rojo"
+
+[node name="RigidBody3D16" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 45.042732)
+color_tag = "rojo"
+
+[node name="RigidBody3D17" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 48.045002)
+color_tag = "rojo"
+
+[node name="RigidBody3D18" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 51.039272)
+color_tag = "rojo"
+
+[node name="RigidBody3D19" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
+transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 54.02522)
+color_tag = "rojo"
+
+[node name="Empujador" parent="." instance=ExtResource("11_u3t0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6165934, 0.28351712, -0.041476488)
 distance_meters = 2.0
 speed = 2.0
 direction = Vector3(-1, 0, 0)
 
 [node name="Empujador3" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4417086, 0.7400569, 3.137631)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3913803, 0.7432307, 3.137631)
 distance_meters = 2.0
-speed = 2.0
+speed = 1.0
 
 [node name="cajas_de_piezas" parent="." instance=ExtResource("14_s8gsf")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.6190383, 0.56597316, 3.016283)
+
+[node name="boton" parent="." instance=ExtResource("5_m1spo")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.510076, 1.0438513, -2.6551704)
+script = ExtResource("16_s8gsf")

@@ -54,7 +54,8 @@ collision_mask = 3
 shape = SubResource("ConvexPolygonShape3D_20d3g")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="CajaRojas"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1.7319958, 0, 0, 0, 1, -0.7, 5.001811, 0)
+visible = false
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 
@@ -66,7 +67,8 @@ collision_mask = 3
 shape = SubResource("ConvexPolygonShape3D_y3wf7")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="CajaRojas"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1.7319958, 0, 0, 0, 1, 0.7, 5.001811, 0)
+visible = false
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 
@@ -78,7 +80,8 @@ collision_mask = 3
 shape = SubResource("ConvexPolygonShape3D_o67g8")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="CajaRojas"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3, -0.7)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.7319958, 0, -1, 0, -4.371139e-08, 0, 5.001811, -0.7)
+visible = false
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 
@@ -90,7 +93,8 @@ collision_mask = 3
 shape = SubResource("ConvexPolygonShape3D_780xe")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="CajaRojas"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3, 0.7)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.7319958, 0, -1, 0, -4.371139e-08, 0, 5.001811, 0.7)
+visible = false
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 
@@ -119,6 +123,106 @@ color_tag = "rojo"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3940933, 0)
 color_tag = "rojo"
 
+[node name="RigidBody3D5" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.741852, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.99815637, 0, -0.060700156, 0, 1, 0, 0.060700156, 0, 0.99815637, 0, 5.489086, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D15" parent="CajaRojas/PiezasRojas/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D14" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9985066, 0, -0.054636523, 0, 1, 0, 0.054636523, 0, 0.9985066, 0, 4.996711, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D13" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.99881995, 0, -0.048570868, 0, 1, 0, 0.048570868, 0, 0.99881995, 0, 4.5997896, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D12" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9990965, 0, -0.042503424, 0, 1, 0, 0.042503424, 0, 0.9990965, 0, 4.288212, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D11" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.99933624, 0, -0.03643442, 0, 1, 0, 0.03643442, 0, 0.99933624, 0, 3.9075246, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D10" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9995391, 0, -0.030364068, 0, 1, 0, 0.030364068, 0, 0.9995391, 0, 3.545208, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D9" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.999705, 0, -0.0242926, 0, 1, 0, 0.0242926, 0, 0.999705, 0, 3.2311304, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D8" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9998341, 0, -0.018220235, 0, 1, 0, 0.018220235, 0, 0.9998341, 0, 2.91282, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D7" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9999264, 0, -0.012147197, 0, 1, 0, 0.012147197, 0, 0.9999264, 0, 2.544888, 0)
+color_tag = "rojo"
+
+[node name="RigidBody3D6" parent="CajaRojas/PiezasRojas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9999816, 0, -0.0060737086, 0, 1, 0, 0.0060737086, 0, 0.9999816, 0, 2.164007, 0)
+color_tag = "rojo"
+
 [node name="CajaBlancas" type="Node3D" parent="."]
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="CajaBlancas"]
@@ -134,7 +238,8 @@ collision_mask = 3
 shape = SubResource("ConvexPolygonShape3D_axyfe")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="CajaBlancas"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 3, 3.283711)
+transform = Transform3D(1, 0, 0, 0, 1.7589515, 0, 0, 0, 1, -0.7, 5.086611, 3.283711)
+visible = false
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 
@@ -146,7 +251,8 @@ collision_mask = 3
 shape = SubResource("ConvexPolygonShape3D_sri6a")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="CajaBlancas"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 3, 3.283711)
+transform = Transform3D(1, 0, 0, 0, 1.7589515, 0, 0, 0, 1, 0.7, 5.086611, 3.283711)
+visible = false
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 
@@ -158,7 +264,8 @@ collision_mask = 3
 shape = SubResource("ConvexPolygonShape3D_g0uy4")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="CajaBlancas"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3, 2.583711)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.7589515, 0, -1, 0, -4.371139e-08, 0, 5.086611, 2.583711)
+visible = false
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 
@@ -170,7 +277,8 @@ collision_mask = 3
 shape = SubResource("ConvexPolygonShape3D_mvoyr")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="CajaBlancas"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3, 3.983711)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.7589515, 0, -1, 0, -4.371139e-08, 0, 5.086611, 3.983711)
+visible = false
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 
@@ -185,5 +293,117 @@ shape = SubResource("ConvexPolygonShape3D_26oiy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.283711)
 
 [node name="RigidBody3D" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1402426, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3092966, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D2" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57844293, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D3" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0411797, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D4" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3940933, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D5" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.741852, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D24" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.78499573, 0, -0.61950773, 0, 1, 0, 0.61950773, 0, 0.78499573, 0, 8.354511, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D15" parent="CajaBlancas/PiezasBlancas/RigidBody3D24" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D15" parent="CajaBlancas/PiezasBlancas/RigidBody3D24/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D15" parent="CajaBlancas/PiezasBlancas/RigidBody3D24/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D15" parent="CajaBlancas/PiezasBlancas/RigidBody3D24/RigidBody3D15/RigidBody3D15/RigidBody3D15" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D23" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.8211521, 0, -0.5707158, 0, 1, 0, 0.5707158, 0, 0.8211521, 0, 8.067968, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D22" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.8542801, 0, -0.51981914, 0, 1, 0, 0.51981914, 0, 0.8542801, 0, 7.7814255, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D21" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.8842576, 0, -0.46700555, 0, 1, 0, 0.46700555, 0, 0.8842576, 0, 7.494883, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D20" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9343309, 0, -0.35641274, 0, 1, 0, 0.35641274, 0, 0.9343309, 0, 6.921798, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D15" parent="CajaBlancas/PiezasBlancas/RigidBody3D20" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9981564, 0, -0.06070016, 0, 1, 0, 0.06070016, 0, 0.9981564, 0, 0.28654242, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D19" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.954242, 0, -0.29904142, 0, 1, 0, 0.29904142, 0, 0.954242, 0, 6.635256, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D18" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9706339, 0, -0.24056728, 0, 1, 0, 0.24056728, 0, 0.9706339, 0, 6.3487134, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D17" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.98344624, 0, -0.181206, 0, 1, 0, 0.181206, 0, 0.98344624, 0, 6.062171, 0)
+color_tag = "blnaco"
+
+[node name="RigidBody3D16" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9926317, 0, -0.1211765, 0, 1, 0, 0.1211765, 0, 0.9926317, 0, 5.7756286, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D15" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.99815637, 0, -0.060700156, 0, 1, 0, 0.060700156, 0, 0.99815637, 0, 5.489086, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D14" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9985066, 0, -0.054636523, 0, 1, 0, 0.054636523, 0, 0.9985066, 0, 4.996711, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D13" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.99881995, 0, -0.048570868, 0, 1, 0, 0.048570868, 0, 0.99881995, 0, 4.5997896, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D12" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9990965, 0, -0.042503424, 0, 1, 0, 0.042503424, 0, 0.9990965, 0, 4.288212, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D11" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.99933624, 0, -0.03643442, 0, 1, 0, 0.03643442, 0, 0.99933624, 0, 3.9075246, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D10" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9995391, 0, -0.030364068, 0, 1, 0, 0.030364068, 0, 0.9995391, 0, 3.545208, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D9" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.999705, 0, -0.0242926, 0, 1, 0, 0.0242926, 0, 0.999705, 0, 3.2311304, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D8" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9998341, 0, -0.018220235, 0, 1, 0, 0.018220235, 0, 0.9998341, 0, 2.91282, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D7" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9999264, 0, -0.012147197, 0, 1, 0, 0.012147197, 0, 0.9999264, 0, 2.544888, 0)
+color_tag = "blanco"
+
+[node name="RigidBody3D6" parent="CajaBlancas/PiezasBlancas" instance=ExtResource("1_20d3g")]
+transform = Transform3D(0.9999816, 0, -0.0060737086, 0, 1, 0, 0.0060737086, 0, 0.9999816, 0, 2.164007, 0)
 color_tag = "blanco"

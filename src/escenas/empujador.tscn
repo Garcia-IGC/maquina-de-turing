@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dujpodbpaiann"]
+[gd_scene load_steps=5 format=3 uid="uid://dujpodbpaiann"]
 
 [ext_resource type="Script" uid="uid://bqpkod5oaj8gv" path="res://static_body_3d.gd" id="1_jwr5u"]
 
@@ -8,7 +8,12 @@ size = Vector3(10, 0.2, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_q3uu8"]
 size = Vector3(10, 0.2, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jwr5u"]
+size = Vector3(11, 0.2, 1)
+
 [node name="Empujador" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_jwr5u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -16,3 +21,10 @@ shape = SubResource("BoxShape3D_tb8mt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_q3uu8")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_jwr5u")

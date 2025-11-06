@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var belt_speed: float = 0.04
+@export var belt_speed: float = 0
 @export var direction: Vector3 = Vector3(0, 0, -1)
 @onready var magnets = $Imanes.get_children()
 @onready var area: Area3D = $Area3D

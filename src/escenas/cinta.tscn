@@ -88,3 +88,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 27)
 
 [node name="Node3D12" parent="Imanes" instance=ExtResource("3_qky5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 30)
+
+[node name="Node3D13" parent="Imanes" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 33)
+
+[node name="Node3D14" parent="Imanes" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 36)
+
+[node name="Node3D15" parent="Imanes" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 39)
+
+[node name="Node3D16" parent="Imanes" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 42)
+
+[node name="Node3D17" parent="Imanes" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 45)
+
+[node name="Node3D18" parent="Imanes" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 48)
+
+[node name="Node3D19" parent="Imanes" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 51)
+
+[node name="Node3D20" parent="Imanes" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 54)
+
+[node name="Node3D21" parent="Imanes" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 57)

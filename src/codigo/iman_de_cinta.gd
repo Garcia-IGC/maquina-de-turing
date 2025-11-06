@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var magnet_strength: float = 50.0
+@export var magnet_strength: float = 4.0
 @onready var area: Area3D = $Area3D
 
 func _physics_process(delta):

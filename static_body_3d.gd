@@ -3,6 +3,7 @@ extends Node3D
 @export var distance_meters: float = 5.0
 @export var speed: float = 5
 @export var direction: Vector3 = Vector3(1, 0, 0)
+@onready var area = $Area3D
 
 var moving := false
 var returning := false
@@ -16,6 +17,7 @@ func move_once():
 		moving = true
 
 func _physics_process(delta):
+	
 	if moving:
 		# Avanza
 		var move_step = direction.normalized() * speed * delta
