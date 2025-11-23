@@ -10,7 +10,7 @@ var estado_actual: int = 0
 var posicion_cabezal: int = 0
 
 @export var tiempo_mov_cinta: float = 3.0
-@export var velocidad_cinta: float = 0.0025
+@export var velocidad_cinta: float = 0.00275
 
 var matriz_de_suma = [
   [ ["rojo", 1, "R"], ["rojo", 0, "R"], ["nada", 4, "nada"] ],
@@ -29,6 +29,8 @@ var colores = {
 # --------------------------------------------------------------
 func _input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		estado_actual= 0
+		posicion_cabezal = 0
 		print("🧠 Iniciando máquina de Turing…")
 		await ejecutar_maquina()
 
