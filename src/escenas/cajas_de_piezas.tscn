@@ -181,7 +181,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CajaBlancas/MeshInstance3D6/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.40189362)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.38818562)
 shape = SubResource("ConvexPolygonShape3D_g0uy4")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="CajaBlancas"]
@@ -194,6 +194,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CajaBlancas/MeshInstance3D8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3859768)
 shape = SubResource("ConvexPolygonShape3D_mvoyr")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="CajaBlancas"]
@@ -206,6 +207,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CajaBlancas/MeshInstance3D7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.38597703)
 shape = SubResource("ConvexPolygonShape3D_26oiy")
 
 [node name="PiezasBlancas" type="Node3D" parent="CajaBlancas"]
