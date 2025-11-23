@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://coofb8bcq3h6h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mmfvq"]
+size = Vector3(0.43, 0.425, 0.425)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4tp3a"]
+top_radius = 0.033
+bottom_radius = 0.033
+height = 0.25
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_medha"]
+top_radius = 0.08
+bottom_radius = 0.08
+height = 0.07
+
+[node name="StepperMotor" type="Node3D"]
+
+[node name="StepperMotorCuerpo" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_mmfvq")
+
+[node name="CilindroStepperMotor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.33695886)
+mesh = SubResource("CylinderMesh_4tp3a")
+
+[node name="PoleaDentada" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.4042421)
+mesh = SubResource("CylinderMesh_medha")

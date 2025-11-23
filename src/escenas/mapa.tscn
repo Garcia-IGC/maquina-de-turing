@@ -1,21 +1,24 @@
-[gd_scene load_steps=20 format=3 uid="uid://kviguekccv7u"]
+[gd_scene load_steps=23 format=3 uid="uid://kviguekccv7u"]
 
 [ext_resource type="PackedScene" uid="uid://dspccbgimg7yb" path="res://src/escenas/cinta.tscn" id="1_p21c5"]
 [ext_resource type="Script" uid="uid://27bwcrx2o10l" path="res://src/escenas/mapa.gd" id="1_updah"]
 [ext_resource type="PackedScene" uid="uid://4u1mf1heecx3" path="res://src/escenas/suelo.tscn" id="3_nttpt"]
-[ext_resource type="PackedScene" uid="uid://bfxuv1u3jpk4l" path="res://src/escenas/iman_de_cinta.tscn" id="4_m1spo"]
 [ext_resource type="PackedScene" uid="uid://dg86l1ochrt4n" path="res://src/escenas/boton.tscn" id="5_m1spo"]
 [ext_resource type="Script" uid="uid://c0mmfygk4lwja" path="res://src/codigo/boton.gd" id="6_veu8s"]
 [ext_resource type="Script" uid="uid://crxw3hh8hr5nj" path="res://src/codigo/boton2.gd" id="7_e0j3v"]
 [ext_resource type="Script" uid="uid://b7e2upyhty7sa" path="res://src/codigo/boton3.gd" id="7_hoawt"]
 [ext_resource type="PackedScene" uid="uid://btivvyu0y3vkr" path="res://src/escenas/lector.tscn" id="9_8wf2n"]
-[ext_resource type="PackedScene" uid="uid://bq5rufsyryekk" path="res://src/escenas/pieza.tscn" id="9_hoawt"]
 [ext_resource type="Script" uid="uid://b4054p63mn0sp" path="res://src/codigo/boton4.gd" id="10_c48xo"]
 [ext_resource type="Script" uid="uid://dv4rnxyua2as2" path="res://src/escenas/boton5.gd" id="11_12y3n"]
 [ext_resource type="PackedScene" uid="uid://dujpodbpaiann" path="res://src/escenas/empujador.tscn" id="11_u3t0g"]
 [ext_resource type="Script" uid="uid://cyoe0exox0inp" path="res://src/escenas/boton6.gd" id="12_updah"]
+[ext_resource type="Script" uid="uid://c4qa0rqx7mlqw" path="res://src/escenas/free_cam.gd" id="14_2lu0f"]
 [ext_resource type="PackedScene" uid="uid://ccye87u7nb8vv" path="res://src/escenas/cajas_de_piezas.tscn" id="14_s8gsf"]
+[ext_resource type="PackedScene" uid="uid://u006wvieevtv" path="res://pieza_corregida.tscn" id="15_2lu0f"]
+[ext_resource type="Script" uid="uid://dvdcamdvcefsy" path="res://src/escenas/pon_rojo.gd" id="16_2lu0f"]
 [ext_resource type="Script" uid="uid://ba8rwvjssov5h" path="res://src/escenas/arduino.gd" id="16_s8gsf"]
+[ext_resource type="Script" uid="uid://dhdlcy1d6rtew" path="res://src/escenas/poner_blanco.gd" id="18_txkvw"]
+[ext_resource type="PackedScene" uid="uid://dbmvy3c884p8f" path="res://pieza_corregida_blanca.tscn" id="19_fuiq0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nulfw"]
 
@@ -30,27 +33,20 @@ sky = SubResource("Sky_kxecg")
 script = ExtResource("1_updah")
 
 [node name="Empujador2" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5316734, 0.72450924, 3.0879827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.382698, 0.24596024, -2.1005795)
 distance_meters = 2.0
 speed = 2.0
 direction = Vector3(-1, 0, 0)
 
 [node name="Lector" parent="." instance=ExtResource("9_8wf2n")]
-transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 3.9981859, -0.65410304, -0.0016429424)
+transform = Transform3D(-4.371138e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 4.0040245, -1.6921371, -2.5170312)
 collision_layer = 3
 
 [node name="Cinta2" parent="." instance=ExtResource("1_p21c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0632868)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.405)
 
 [node name="Suelo" parent="." instance=ExtResource("3_nttpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6888824, -2.3175597, 0)
-
-[node name="Node3D2" parent="Suelo" instance=ExtResource("4_m1spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.002809, 2.5175598, 0.13092923)
-
-[node name="Node3D" parent="Suelo" instance=ExtResource("4_m1spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4648824, 2.4175596, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.76637524, -14.859612)
 
 [node name="Piezas" type="Node3D" parent="."]
 
@@ -83,20 +79,9 @@ script = ExtResource("12_updah")
 
 [node name="Cosas_del_mapa" type="Node3D" parent="."]
 
-[node name="RigidBody3D3" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 6.117442)
-color_tag = "rojo"
-
-[node name="RigidBody3D2" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 0.99999315, -0.0037000896, 0, 0.0037000896, 0.99999315, -0.061574936, 0.32555085, 27.114193)
-color_tag = "blanco"
-
-[node name="RigidBody3D" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36383486, 0.07252765)
-color_tag = "rojo"
-
 [node name="Camera3D" type="Camera3D" parent="Cosas_del_mapa"]
 transform = Transform3D(-0.9990867, 0, -0.04273022, 0, 1, 0, 0.04273022, 0, -0.9990867, 0.31990147, 1.6787553, -7.516223)
+script = ExtResource("14_2lu0f")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Cosas_del_mapa"]
 environment = SubResource("Environment_nttpt")
@@ -104,84 +89,374 @@ environment = SubResource("Environment_nttpt")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Cosas_del_mapa"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4606836, 0)
 
-[node name="RigidBody3D4" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 3.0997968)
-color_tag = "rojo"
-
-[node name="RigidBody3D5" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 9.0201)
-color_tag = "rojo"
-
-[node name="RigidBody3D6" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 12.096209)
-color_tag = "rojo"
-
-[node name="RigidBody3D7" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 15.047786)
-color_tag = "rojo"
-
-[node name="RigidBody3D8" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 18.050056)
-color_tag = "rojo"
-
-[node name="RigidBody3D9" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 21.044327)
-color_tag = "rojo"
-
-[node name="RigidBody3D10" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 24.030272)
-color_tag = "rojo"
-
-[node name="RigidBody3D11" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 36.11239)
-color_tag = "rojo"
-
-[node name="RigidBody3D12" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36383486, 30.067474)
-color_tag = "rojo"
-
-[node name="RigidBody3D13" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 33.09474)
-color_tag = "rojo"
-
-[node name="RigidBody3D14" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013137579, 0.34313452, 39.015045)
-color_tag = "rojo"
-
-[node name="RigidBody3D15" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 42.091152)
-color_tag = "rojo"
-
-[node name="RigidBody3D16" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 45.042732)
-color_tag = "rojo"
-
-[node name="RigidBody3D17" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 48.045002)
-color_tag = "rojo"
-
-[node name="RigidBody3D18" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 51.039272)
-color_tag = "rojo"
-
-[node name="RigidBody3D19" parent="Cosas_del_mapa" instance=ExtResource("9_hoawt")]
-transform = Transform3D(0.99999166, 0, 0.0040840595, 0, 1, 0, -0.0040840595, 0, 0.99999166, 0.013137579, 0.34313452, 54.02522)
-color_tag = "rojo"
-
 [node name="Empujador" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6165934, 0.28351712, -0.041476488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69997096, 0.11468533, -2.523878)
 distance_meters = 2.0
 speed = 2.0
 direction = Vector3(-1, 0, 0)
 
 [node name="Empujador3" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3913803, 0.7432307, 3.137631)
-distance_meters = 2.0
-speed = 1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5186076, 0.20592743, -2.091762)
+distance_meters = 1.0
+speed = 0.5
 
 [node name="cajas_de_piezas" parent="." instance=ExtResource("14_s8gsf")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.6190383, 0.56597316, 3.016283)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.34026277, 0.13167563, -2.11003)
 
 [node name="boton" parent="." instance=ExtResource("5_m1spo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.510076, 1.0438513, -2.6551704)
 script = ExtResource("16_s8gsf")
+
+[node name="MarcadoresImanes" type="Node3D" parent="."]
+
+[node name="M1" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, -2.5480957)
+
+[node name="M2" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, -2.0490966)
+
+[node name="M3" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, -1.5523642)
+
+[node name="M4" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, -1.0475602)
+
+[node name="M5" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, -0.55096114)
+
+[node name="M6" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, -0.056541204)
+
+[node name="M7" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 0.44795763)
+
+[node name="M8" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 0.9453962)
+
+[node name="M9" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 1.450962)
+
+[node name="M10" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 1.9384085)
+
+[node name="M11" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 2.4514298)
+
+[node name="M12" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 2.9440908)
+
+[node name="M13" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 3.4475133)
+
+[node name="M14" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 3.9498076)
+
+[node name="M15" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 4.4491653)
+
+[node name="M16" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 4.9487395)
+
+[node name="M17" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 5.4506865)
+
+[node name="M18" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 5.945293)
+
+[node name="M19" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 6.438984)
+
+[node name="M20" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 6.9415307)
+
+[node name="M21" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 7.450115)
+
+[node name="M22" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 7.9430223)
+
+[node name="M23" type="Marker3D" parent="MarcadoresImanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 8.4332485)
+
+[node name="BotonesParaPiezas" type="Node3D" parent="."]
+
+[node name="Arrriba" type="Node3D" parent="BotonesParaPiezas"]
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5915702, 0.6836146, -1.5201504)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../MarcadoresImanes/M1")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../MarcadoresImanes/M2")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../MarcadoresImanes/M3")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../MarcadoresImanes/M4")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../MarcadoresImanes/M5")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../MarcadoresImanes/M6")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../MarcadoresImanes/M7")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../MarcadoresImanes/M8")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../MarcadoresImanes/M9")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../MarcadoresImanes/M10")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../MarcadoresImanes/M11")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../MarcadoresImanes/M12")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../MarcadoresImanes/M13")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../MarcadoresImanes/M14")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../../MarcadoresImanes/M15")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../../../MarcadoresImanes/M16")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M17")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M18")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M19")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M20")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M21")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M22")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="boton" parent="BotonesParaPiezas/Arrriba/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29794538)
+script = ExtResource("16_2lu0f")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M23")
+red_piece_scene = ExtResource("15_2lu0f")
+
+[node name="Abajo" type="Node3D" parent="BotonesParaPiezas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28206855, 0)
+
+[node name="boton" parent="BotonesParaPiezas/Abajo" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.592, 0.695009, -1.52)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../MarcadoresImanes/M1")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../MarcadoresImanes/M2")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../MarcadoresImanes/M3")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../MarcadoresImanes/M4")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../MarcadoresImanes/M5")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../MarcadoresImanes/M6")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../MarcadoresImanes/M7")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../MarcadoresImanes/M8")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../MarcadoresImanes/M9")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../MarcadoresImanes/M10")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../MarcadoresImanes/M11")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../MarcadoresImanes/M12")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../MarcadoresImanes/M13")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../MarcadoresImanes/M14")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../../MarcadoresImanes/M15")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../../../MarcadoresImanes/M16")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M17")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M18")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M19")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M20")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M21")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M22")
+red_piece_scene = ExtResource("19_fuiq0")
+
+[node name="boton" parent="BotonesParaPiezas/Abajo/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton/boton" node_paths=PackedStringArray("marker") instance=ExtResource("5_m1spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.298)
+script = ExtResource("18_txkvw")
+marker = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../MarcadoresImanes/M23")
+red_piece_scene = ExtResource("19_fuiq0")

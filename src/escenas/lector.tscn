@@ -4,28 +4,30 @@
 [ext_resource type="Script" uid="uid://uhawy31tlnus" path="res://src/codigo/area_3d (2).gd" id="1_gtxco"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kqljf"]
-size = Vector3(1, 5, 1)
+size = Vector3(0.4, 5, 0.4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gtxco"]
-size = Vector3(1, 1, 5)
+size = Vector3(0.4, 0.7, 0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_are13"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5judi"]
 material = SubResource("ShaderMaterial_are13")
+size = Vector3(0.4, 0.15, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_are13"]
-size = Vector3(1, 10.19165, 1)
+size = Vector3(0.047, 4.276, 0.4)
 
 [node name="Lector" type="StaticBody3D"]
 script = ExtResource("1_are13")
 
 [node name="Estructura1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271, 2.85)
 mesh = SubResource("BoxMesh_kqljf")
 skeleton = NodePath("../Estructura2")
 
 [node name="Estructura2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42, 4)
 mesh = SubResource("BoxMesh_gtxco")
 
 [node name="Lector" type="MeshInstance3D" parent="."]
@@ -37,8 +39,12 @@ collision_layer = 3
 script = ExtResource("1_gtxco")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50842285, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00055540353, 3.4662023, 4)
 shape = SubResource("BoxShape3D_are13")
 debug_color = Color(0.9098039, 0.20784314, 0, 0.41960785)
+
+[node name="Estructura3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 2.52, 3.4)
+mesh = SubResource("BoxMesh_gtxco")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

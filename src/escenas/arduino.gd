@@ -10,7 +10,7 @@ var estado_actual: int = 0
 var posicion_cabezal: int = 0
 
 @export var tiempo_mov_cinta: float = 3.0
-@export var velocidad_cinta: float = 0.0167
+@export var velocidad_cinta: float = 0.0025
 
 var matriz_de_suma = [
   [ ["rojo", 1, "R"], ["rojo", 0, "R"], ["nada", 4, "nada"] ],
