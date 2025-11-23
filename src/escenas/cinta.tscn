@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dspccbgimg7yb"]
+[gd_scene load_steps=16 format=3 uid="uid://dspccbgimg7yb"]
 
 [ext_resource type="Script" uid="uid://dxn6yc12ov73b" path="res://src/codigo/cinta.gd" id="1_qky5x"]
 [ext_resource type="PackedScene" uid="uid://bfxuv1u3jpk4l" path="res://src/escenas/iman_de_cinta.tscn" id="3_qky5x"]
@@ -30,10 +30,21 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bb845"]
 material = SubResource("StandardMaterial3D_rxdua")
-size = Vector3(0.035, 0.02, 1.455)
+size = Vector3(0.035, 0.02, 1.24)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qky5x"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ysks"]
+material = SubResource("StandardMaterial3D_qky5x")
+size = Vector3(0.035, 0.02, 0.075)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jc60o"]
+albedo_color = Color(0.42436016, 0.16199845, 0.08910083, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ums1p"]
-size = Vector3(0.05, 0.66, 22.5)
+material = SubResource("StandardMaterial3D_jc60o")
+size = Vector3(0.05, 0.75, 22.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qky5x"]
 size = Vector3(0.4, 0.185, 0.04)
@@ -155,13 +166,61 @@ mesh = SubResource("CylinderMesh_qky5x")
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="Correa" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, -0.36979508, -0.20282596, 35.21674)
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, -0.36979508, -0.21561329, 35.197395)
 mesh = SubResource("BoxMesh_bb845")
 
 [node name="Correa2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.9996573, 0.026176948, 0, -0.026176948, 0.9996573, -0.35722536, -0.54273343, 35.303574)
+transform = Transform3D(1, 0, 0, 0, 0.9996573, 0.026176948, 0, -0.026176948, 0.9996573, -0.35722536, -0.5339216, 35.279064)
 mesh = SubResource("BoxMesh_bb845")
 skeleton = NodePath("../Correa")
+
+[node name="Correa3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9816271, -0.19080898, 0, 0.19080898, 0.9816271, -0.37, -0.062599, 35.82713)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa3" type="MeshInstance3D" parent="Node3D/Correa3"]
+transform = Transform3D(1, 0, 0, 0, 0.9816288, -0.19080932, 0, 0.19080932, 0.9816288, 0.001505971, -0.007984161, 0.07172775)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa3" type="MeshInstance3D" parent="Node3D/Correa3/Correa3"]
+transform = Transform3D(1, 0, 0, 0, 0.9510581, -0.30901748, 0, 0.30901748, 0.9510581, 0.001505971, -0.011845589, 0.07104874)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa3" type="MeshInstance3D" parent="Node3D/Correa3/Correa3/Correa3"]
+transform = Transform3D(1, 0, 0, 0, 0.9510581, -0.30901748, 0, 0.30901748, 0.9510581, 0.001505971, -0.011845589, 0.07104874)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa3" type="MeshInstance3D" parent="Node3D/Correa3/Correa3/Correa3/Correa3"]
+transform = Transform3D(1, 0, 0, 0, 0.9510581, -0.30901748, 0, 0.30901748, 0.9510581, 0.001505971, -0.011845589, 0.07104874)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa3" type="MeshInstance3D" parent="Node3D/Correa3/Correa3/Correa3/Correa3/Correa3"]
+transform = Transform3D(1, 0, 0, 0, 0.9510581, -0.30901748, 0, 0.30901748, 0.9510581, 0.001505971, -0.011845589, 0.07104874)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa3" type="MeshInstance3D" parent="Node3D/Correa3/Correa3/Correa3/Correa3/Correa3/Correa3"]
+transform = Transform3D(1, 0, 0, 0, 0.9510581, -0.30901748, 0, 0.30901748, 0.9510581, 0.001505971, -0.011845589, 0.07104874)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa3" type="MeshInstance3D" parent="Node3D/Correa3/Correa3/Correa3/Correa3/Correa3/Correa3/Correa3"]
+transform = Transform3D(1, 0, 0, 0, 0.9510581, -0.30901748, 0, 0.30901748, 0.9510581, 0.001505971, -0.011845589, 0.07104874)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa3" type="MeshInstance3D" parent="Node3D/Correa3/Correa3/Correa3/Correa3/Correa3/Correa3/Correa3/Correa3"]
+transform = Transform3D(1, 0, 0, 0, 0.9510581, -0.30901748, 0, 0.30901748, 0.9510581, 0.001505971, -0.011845589, 0.07104874)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.61566246, 0.7880119, 0, -0.7880119, 0.61566246, -0.3691978, -0.40742102, 34.5864)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa4" type="MeshInstance3D" parent="Node3D/Correa4"]
+transform = Transform3D(1, 0, 0, 0, 0.6156634, 0.788012, 0, -0.788012, 0.6156634, 0.00783664, -0.03441429, -0.061576843)
+mesh = SubResource("BoxMesh_1ysks")
+
+[node name="Correa4" type="MeshInstance3D" parent="Node3D/Correa4/Correa4"]
+transform = Transform3D(1, 0, 0, 0, 0.6156634, 0.788012, 0, -0.788012, 0.6156634, 0.00783664, -0.022468567, -0.06615543)
+mesh = SubResource("BoxMesh_1ysks")
 
 [node name="Cobertura" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234, -0.334, 24.681887)
@@ -225,3 +284,13 @@ skeleton = NodePath("../MeshInstance3D")
 transform = Transform3D(-1, 8.742277e-08, 0, -6.017787e-08, -0.68835455, -0.7253743, -6.341424e-08, -0.7253743, 0.68835455, 0.019119322, -0.57668173, 35.981747)
 mesh = SubResource("BoxMesh_qky5x")
 skeleton = NodePath("../MeshInstance3D")
+
+[node name="Rodillo2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.7480053e-05, 1, 0, -1, 1.7480053e-05, 0, 0, 0, 1, 0, -0.29454812, 13.605811)
+mesh = SubResource("CylinderMesh_53i6w")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="CinildroRodillo2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.7480053e-05, 1, 0, -1, 1.7480053e-05, 0, 0, 0, 1, -0.0008395016, -0.29454812, 13.605811)
+mesh = SubResource("CylinderMesh_bb845")
+skeleton = NodePath("../Rodillo")
