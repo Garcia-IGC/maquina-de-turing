@@ -97,7 +97,7 @@ environment = SubResource("Environment_nttpt")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4606836, 0)
 
 [node name="Empujador" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69997096, 0.1685332, 2.740303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37241364, 0.1685332, 2.740303)
 distance_meters = 0.605
 speed = 1.0
 direction = Vector3(-1, 0, 0)

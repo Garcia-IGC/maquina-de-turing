@@ -1,7 +1,6 @@
 extends StaticBody3D
 
 @onready var empujador_borrar = get_node("../Empujador")
-@onready var empujador_blanco = get_node("../Empujador2")
 @onready var empujador_rojo = get_node("../Empujador3")
 @onready var cinta = get_node("../Cinta2")
 @onready var lector = get_node("../Lector")
@@ -33,8 +32,8 @@ var colores = {
 	"nada": 2
 }
 
-var matriz_activa = null   # matriz seleccionada en inicio
-var estados_halt: Array = []   # lista de estados de HALT según matriz seleccionada
+var matriz_activa = null
+var estados_halt: Array = []
 
 # --------------------------------------------------------------
 # INICIO CON CLICK
@@ -48,11 +47,9 @@ func _input_event(camera, event, position, normal, shape_idx):
 		matriz_activa = null
 		estados_halt.clear()
 
-		# 1) LEER PRIMER COLOR
 		var primer_color: String = await lector_leer_color()
 		print("Primer color detectado:", primer_color)
 
-		# 2) ELEGIR MATRIZ SEGÚN COLOR
 		if primer_color == "rojo":
 			matriz_activa = matriz_de_suma
 			estados_halt = [3, 4]
@@ -65,16 +62,11 @@ func _input_event(camera, event, position, normal, shape_idx):
 			print("❌ Primer color inválido o 'nada' → HALT")
 			return
 
-		# 3) SALTAR DOS CELDAS A LA DERECHA
-		print("⏭ Saltando dos espacios antes de empezar...")
 		await mover_cabezal("R")
 		await mover_cabezal("R")
 
-		# 4) EMPIEZA EL PROCESO NORMAL
 		await ejecutar_maquina()
 
-# --------------------------------------------------------------
-# BUCLE PRINCIPAL
 # --------------------------------------------------------------
 func ejecutar_maquina():
 	if matriz_activa == null:
@@ -82,7 +74,6 @@ func ejecutar_maquina():
 		return
 
 	while true:
-		# condición dinámica de HALT
 		if estado_actual in estados_halt:
 			break
 
@@ -118,10 +109,11 @@ func lector_leer_color() -> String:
 		if color == "" or color == null:
 			return "nada"
 		return color
+
 	return "nada"
 
 # --------------------------------------------------------------
-# Escritura
+# Escritura (CORREGIDA)
 # --------------------------------------------------------------
 func escribir_en_cinta(simbolo: String, color_actual: String):
 	if simbolo == color_actual:
@@ -132,41 +124,32 @@ func escribir_en_cinta(simbolo: String, color_actual: String):
 		await get_tree().create_timer(0.3).timeout
 		return
 
-	# Borrar antes de escribir
-	await mover_empujador(empujador_borrar)
-	await get_tree().create_timer(0.3).timeout
+	# Si simbolo == "blanco", NO hacemos nada porque ya estaba blanco.
 
-	# Mover una celda a la izquierda para escribir
-	await mover_cabezal("L")
-	await get_tree().create_timer(0.3).timeout
+	if simbolo == "rojo":
+		# borrar antes de escribir rojo
+		await mover_empujador(empujador_borrar)
+		await get_tree().create_timer(0.3).timeout
 
-	# Escribir (activar empujador correspondiente)
-	match simbolo:
-		"blanco":
-			await mover_empujador(empujador_blanco)
-		"rojo":
-			await mover_empujador(empujador_rojo)
+		# mover a la izquierda para escribir
+		await mover_cabezal("L")
 
-	await get_tree().create_timer(0.3).timeout
+		await mover_empujador(empujador_rojo)
+		await get_tree().create_timer(0.3).timeout
 
-	# Volver: mover una celda a la derecha (dejamos al final del proceso que avance si debe)
-	await mover_cabezal("R")
+		# volver al centro
+		await mover_cabezal("R")
 
 # --------------------------------------------------------------
 # Empujador
 # --------------------------------------------------------------
 func mover_empujador(empujador: Node3D):
-	# asume que empujador tiene método move_once() definido por ti
 	if empujador == null:
 		return
 
 	empujador.move_once()
 	await get_tree().create_timer(1.5).timeout
-	empujador.move_once()
-	await get_tree().create_timer(1.5).timeout
 
-# --------------------------------------------------------------
-# Movimiento de cinta / cabezal
 # --------------------------------------------------------------
 func mover_cabezal(direccion: String):
 	match direccion:
@@ -174,14 +157,10 @@ func mover_cabezal(direccion: String):
 			await mover_cinta_temporal(1)
 		"L":
 			await mover_cinta_temporal(-1)
-		_:
-			return
 
 func mover_cinta_temporal(sentido: int):
 	var velocidad = velocidad_cinta * sentido
 	cinta.belt_speed = velocidad
-	print("▶️ Moviendo cinta:", velocidad)
 	await get_tree().create_timer(tiempo_mov_cinta).timeout
 	cinta.belt_speed = 0
-	print("⏹️ Cinta detenida")
 	await get_tree().create_timer(1.5).timeout
