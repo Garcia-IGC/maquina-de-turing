@@ -1,14 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://dspccbgimg7yb"]
+[gd_scene load_steps=17 format=3 uid="uid://dspccbgimg7yb"]
 
 [ext_resource type="Script" uid="uid://dxn6yc12ov73b" path="res://src/codigo/cinta.gd" id="1_qky5x"]
 [ext_resource type="PackedScene" uid="uid://bfxuv1u3jpk4l" path="res://src/escenas/iman_de_cinta.tscn" id="3_qky5x"]
 [ext_resource type="PackedScene" uid="uid://coofb8bcq3h6h" path="res://src/escenas/stepper_motor.tscn" id="3_rxdua"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_53i6w"]
-size = Vector3(0.3, 0.1, 72)
+size = Vector3(0.3, 0.1, 6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rxdua"]
-size = Vector3(0.4, 0.1, 22.5)
+size = Vector3(0.4, 0.1, 6)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_53i6w"]
 top_radius = 0.25
@@ -44,10 +44,20 @@ albedo_color = Color(0.42436016, 0.16199845, 0.08910083, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ums1p"]
 material = SubResource("StandardMaterial3D_jc60o")
-size = Vector3(0.05, 0.75, 22.5)
+size = Vector3(0.05, 0.985, 6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qky5x"]
 size = Vector3(0.4, 0.185, 0.04)
+
+[sub_resource type="Curve3D" id="Curve3D_qky5x"]
+closed = true
+bake_interval = 7.15
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -0.005013898, 3.9402428, 0, 0, 0, 0, 0, 0, 0.038208008, 0.010092676, -0.9063244, 0, 0, 0, 0, 0, 0, 0.038208008, 0.0030073524, -2.0045528, 0, 0, 0, 0, 0, 0, 0.038208008, -0.36543077, -2.4296741, 0, 0, 0, 0, 0, 0, 0.038208008, -0.8401491, -2.1037483, 0, 0, 0, 0, 0, 0, 0.038208008, -0.9340773, -1.0897388, 0, 0, 0, 0, 0, 0, 0.038208008, -0.8471958, 4.227619, 0, 0, 0, 0, 0, 0, 0.038208008, -0.120350406, 4.5531425),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+up_vector_enabled = false
 
 [node name="Cinta" type="Node3D"]
 script = ExtResource("1_qky5x")
@@ -57,10 +67,11 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D1" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.554823, 0, 30.971682)
 shape = SubResource("BoxShape3D_53i6w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.681)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32.91253)
 mesh = SubResource("BoxMesh_rxdua")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
@@ -72,79 +83,11 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6639113, 0, 32.92116)
 shape = SubResource("BoxShape3D_53i6w")
 
 [node name="Imanes" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, -1.1466986)
-
-[node name="Node3D" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 27)
-
-[node name="Node3D2" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 27.5)
-
-[node name="Node3D3" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 28)
-
-[node name="Node3D4" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 28.5)
-
-[node name="Node3D5" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 29)
-
-[node name="Node3D6" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 29.5)
-
-[node name="Node3D7" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 30)
-
-[node name="Node3D8" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 30.5)
-
-[node name="Node3D9" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 31)
-
-[node name="Node3D10" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 31.5)
-
-[node name="Node3D11" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 32)
-
-[node name="Node3D12" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 32.5)
-
-[node name="Node3D13" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 33)
-
-[node name="Node3D14" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 33.5)
-
-[node name="Node3D15" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 34)
-
-[node name="Node3D16" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 34.5)
-
-[node name="Node3D17" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 35)
-
-[node name="Node3D18" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 35.5)
-
-[node name="Node3D19" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 36)
-
-[node name="Node3D20" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 36.5)
-
-[node name="Node3D21" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 37)
-
-[node name="Node3D22" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 26)
-
-[node name="Node3D23" parent="Imanes" instance=ExtResource("3_qky5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 26.5)
 
 [node name="Rodillo" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.7480053e-05, 1, 0, -1, 1.7480053e-05, 0, 0, 0, 1, 0, -0.29454812, 35.782425)
@@ -223,7 +166,7 @@ transform = Transform3D(1, 0, 0, 0, 0.6156634, 0.788012, 0, -0.788012, 0.6156634
 mesh = SubResource("BoxMesh_1ysks")
 
 [node name="Cobertura" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234, -0.334, 24.681887)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234, -0.44736558, 32.938675)
 mesh = SubResource("BoxMesh_ums1p")
 
 [node name="Cobertura" type="MeshInstance3D" parent="Cobertura"]
@@ -261,36 +204,180 @@ skeleton = NodePath("../MeshInstance3D")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 49.348)
 
 [node name="Rodillo" type="MeshInstance3D" parent="Externa2"]
-transform = Transform3D(-1, 3.4960107e-05, 0, -3.4960107e-05, -1, 0, 0, 0, 1, 0.019119322, -0.2935986, 36.05931)
+transform = Transform3D(-1, 3.4960107e-05, 0, -3.4960107e-05, -1, 0, 0, 0, 1, 0.019120762, -0.2935986, 19.586628)
 mesh = SubResource("BoxMesh_qky5x")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="Rodillo2" type="MeshInstance3D" parent="Externa2"]
-transform = Transform3D(-1, -8.742277e-08, 0, 6.017787e-08, -0.68835455, 0.7253743, -6.341424e-08, 0.7253743, 0.68835455, 0.019119322, -0.023177125, 35.981747)
+transform = Transform3D(-1, -8.742277e-08, 0, 6.017787e-08, -0.68835455, 0.7253743, -6.341424e-08, 0.7253743, 0.68835455, 0.019120764, -0.023177125, 19.509064)
 mesh = SubResource("BoxMesh_qky5x")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="Rodillo3" type="MeshInstance3D" parent="Externa2"]
-transform = Transform3D(-1, 6.644131e-08, 0, -8.715328e-08, -0.7576572, 0.0784591, 6.8591124e-09, 0.059628915, 0.9969173, 0.019, -0.14361411, 36.053)
+transform = Transform3D(-1, 6.644131e-08, 0, -8.715328e-08, -0.7576572, 0.0784591, 6.8591106e-09, 0.059628915, 0.9969173, 0.01900144, -0.14361411, 19.580318)
 mesh = SubResource("BoxMesh_qky5x")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="Rodillo4" type="MeshInstance3D" parent="Externa2"]
-transform = Transform3D(-1, -6.644131e-08, 0, 8.715328e-08, -0.7576572, -0.07845909, 6.8591124e-09, -0.059628915, 0.99691725, 0.019, -0.4519649, 36.053)
+transform = Transform3D(-1, -6.644131e-08, 0, 8.715328e-08, -0.7576572, -0.07845909, 6.8591106e-09, -0.059628915, 0.99691725, 0.01900144, -0.4519649, 19.580318)
 mesh = SubResource("BoxMesh_qky5x")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="Rodillo5" type="MeshInstance3D" parent="Externa2"]
-transform = Transform3D(-1, 8.742277e-08, 0, -6.017787e-08, -0.68835455, -0.7253743, -6.341424e-08, -0.7253743, 0.68835455, 0.019119322, -0.57668173, 35.981747)
+transform = Transform3D(-1, 8.742277e-08, 0, -6.017787e-08, -0.68835455, -0.7253743, -6.341424e-08, -0.7253743, 0.68835455, 0.019120764, -0.57668173, 19.509064)
 mesh = SubResource("BoxMesh_qky5x")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="Rodillo2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.7480053e-05, 1, 0, -1, 1.7480053e-05, 0, 0, 0, 1, 0, -0.29454812, 13.605811)
+transform = Transform3D(1.7480053e-05, 1, 0, -1, 1.7480053e-05, 0, 0, 0, 1, 0, -0.29454812, 30.078493)
 mesh = SubResource("CylinderMesh_53i6w")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="CinildroRodillo2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.7480053e-05, 1, 0, -1, 1.7480053e-05, 0, 0, 0, 1, -0.0008395016, -0.29454812, 13.605811)
+transform = Transform3D(1.7480053e-05, 1, 0, -1, 1.7480053e-05, 0, 0, 0, 1, -0.0008395016, -0.29454812, 30.078493)
 mesh = SubResource("CylinderMesh_bb845")
 skeleton = NodePath("../Rodillo")
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28817582, 31.062225)
+
+[node name="Path3D" type="Path3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20401852, 0.8090172)
+curve = SubResource("Curve3D_qky5x")
+debug_custom_color = Color(0, 1, 0, 1)
+
+[node name="PF1" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(0.9999959, 0, 0, 0, 0.999993, 0, 0, 0, 0.9999948, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D41" parent="Node3D2/Path3D/PF1" instance=ExtResource("3_qky5x")]
+
+[node name="PF2" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(0.9999959, 0, 0, 0, 0.999993, 0, 0, 0, 0.9999948, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D40" parent="Node3D2/Path3D/PF2" instance=ExtResource("3_qky5x")]
+
+[node name="PF3" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(0.9999959, 0, 0, 0, 0.999993, 0, 0, 0, 0.9999948, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D39" parent="Node3D2/Path3D/PF3" instance=ExtResource("3_qky5x")]
+
+[node name="PF4" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(0.9999959, 0, 0, 0, 0.999993, 0, 0, 0, 0.9999948, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D38" parent="Node3D2/Path3D/PF4" instance=ExtResource("3_qky5x")]
+transform = Transform3D(1, 0, 0, 0, 1.0000008, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PF5" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D37" parent="Node3D2/Path3D/PF5" instance=ExtResource("3_qky5x")]
+
+[node name="PF6" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D36" parent="Node3D2/Path3D/PF6" instance=ExtResource("3_qky5x")]
+
+[node name="PF7" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D35" parent="Node3D2/Path3D/PF7" instance=ExtResource("3_qky5x")]
+
+[node name="PF8" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D34" parent="Node3D2/Path3D/PF8" instance=ExtResource("3_qky5x")]
+
+[node name="PF9" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D33" parent="Node3D2/Path3D/PF9" instance=ExtResource("3_qky5x")]
+
+[node name="PF10" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D32" parent="Node3D2/Path3D/PF10" instance=ExtResource("3_qky5x")]
+
+[node name="PF11" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D31" parent="Node3D2/Path3D/PF11" instance=ExtResource("3_qky5x")]
+
+[node name="PF12" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D30" parent="Node3D2/Path3D/PF12" instance=ExtResource("3_qky5x")]
+
+[node name="PF13" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D29" parent="Node3D2/Path3D/PF13" instance=ExtResource("3_qky5x")]
+
+[node name="PF14" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D27" parent="Node3D2/Path3D/PF14" instance=ExtResource("3_qky5x")]
+
+[node name="PF15" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D26" parent="Node3D2/Path3D/PF15" instance=ExtResource("3_qky5x")]
+
+[node name="PF16" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D25" parent="Node3D2/Path3D/PF16" instance=ExtResource("3_qky5x")]
+
+[node name="PF17" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D23" parent="Node3D2/Path3D/PF17" instance=ExtResource("3_qky5x")]
+
+[node name="PF18" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D22" parent="Node3D2/Path3D/PF18" instance=ExtResource("3_qky5x")]
+
+[node name="PF19" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D20" parent="Node3D2/Path3D/PF19" instance=ExtResource("3_qky5x")]
+
+[node name="PF20" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D21" parent="Node3D2/Path3D/PF20" instance=ExtResource("3_qky5x")]
+
+[node name="PF21" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D24" parent="Node3D2/Path3D/PF21" instance=ExtResource("3_qky5x")]
+
+[node name="PF22" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005013898, 3.9402428)
+rotation_mode = 0
+
+[node name="Node3D28" parent="Node3D2/Path3D/PF22" instance=ExtResource("3_qky5x")]
+
+[node name="PF23" type="PathFollow3D" parent="Node3D2/Path3D"]
+transform = Transform3D(0.99996185, -2.4569199e-05, -0.007882662, -9.0948825e-13, 0.9999221, -0.0031166242, 0.007883219, 0.0031165266, 0.9998913, 0, -0.005013898, 3.9402428)

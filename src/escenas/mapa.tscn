@@ -33,20 +33,20 @@ sky = SubResource("Sky_kxecg")
 script = ExtResource("1_updah")
 
 [node name="Empujador2" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.382698, 0.24596024, -2.1005795)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.382698, 0.24596024, 3.736315)
 distance_meters = 2.0
 speed = 2.0
 direction = Vector3(-1, 0, 0)
 
 [node name="Lector" parent="." instance=ExtResource("9_8wf2n")]
-transform = Transform3D(-4.371138e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 4.0040245, -1.6921371, -2.5170312)
+transform = Transform3D(-4.371138e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 4.0040245, -1.6921371, 2.74715)
 collision_layer = 3
 
 [node name="Cinta2" parent="." instance=ExtResource("1_p21c5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.405)
 
 [node name="Suelo" parent="." instance=ExtResource("3_nttpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.76637524, -14.859612)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0577247, -14.859612)
 
 [node name="Piezas" type="Node3D" parent="."]
 
@@ -90,24 +90,25 @@ environment = SubResource("Environment_nttpt")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4606836, 0)
 
 [node name="Empujador" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69997096, 0.11468533, -2.523878)
-distance_meters = 2.0
-speed = 2.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69997096, 0.1685332, 2.740303)
+distance_meters = 0.605
+speed = 1.0
 direction = Vector3(-1, 0, 0)
 
 [node name="Empujador3" parent="." instance=ExtResource("11_u3t0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5186076, 0.20592743, -2.091762)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5186076, 0.20592743, 3.7451324)
 distance_meters = 1.0
 speed = 0.5
 
 [node name="cajas_de_piezas" parent="." instance=ExtResource("14_s8gsf")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.34026277, 0.13167563, -2.11003)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.34026277, 0.13167563, 3.7081232)
 
 [node name="boton" parent="." instance=ExtResource("5_m1spo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.510076, 1.0438513, -2.6551704)
 script = ExtResource("16_s8gsf")
 
 [node name="MarcadoresImanes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100340724, 10.939295)
 
 [node name="M1" type="Marker3D" parent="MarcadoresImanes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, -2.5480957)
@@ -173,12 +174,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 6.9415307)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 7.450115)
 
 [node name="M22" type="Marker3D" parent="MarcadoresImanes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 7.9430223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 8.157461)
 
 [node name="M23" type="Marker3D" parent="MarcadoresImanes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11211129, 8.4332485)
 
 [node name="BotonesParaPiezas" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.773484)
 
 [node name="Arrriba" type="Node3D" parent="BotonesParaPiezas"]
 
