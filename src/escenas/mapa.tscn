@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://kviguekccv7u"]
+[gd_scene load_steps=27 format=3 uid="uid://kviguekccv7u"]
 
 [ext_resource type="PackedScene" uid="uid://dspccbgimg7yb" path="res://src/escenas/cinta.tscn" id="1_p21c5"]
 [ext_resource type="Script" uid="uid://27bwcrx2o10l" path="res://src/escenas/mapa.gd" id="1_updah"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://b7e2upyhty7sa" path="res://src/codigo/boton3.gd" id="7_hoawt"]
 [ext_resource type="PackedScene" uid="uid://btivvyu0y3vkr" path="res://src/escenas/lector.tscn" id="9_8wf2n"]
 [ext_resource type="Script" uid="uid://b4054p63mn0sp" path="res://src/codigo/boton4.gd" id="10_c48xo"]
-[ext_resource type="Script" uid="uid://dv4rnxyua2as2" path="res://src/escenas/boton5.gd" id="11_12y3n"]
 [ext_resource type="PackedScene" uid="uid://dujpodbpaiann" path="res://src/escenas/empujador.tscn" id="11_u3t0g"]
 [ext_resource type="Script" uid="uid://cyoe0exox0inp" path="res://src/escenas/boton6.gd" id="12_updah"]
 [ext_resource type="Script" uid="uid://c4qa0rqx7mlqw" path="res://src/escenas/free_cam.gd" id="14_2lu0f"]
@@ -80,10 +79,6 @@ script = ExtResource("7_e0j3v")
 [node name="boton4" parent="Botones" instance=ExtResource("5_m1spo")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.032316446, 1.1256564, -3.2269516)
 script = ExtResource("10_c48xo")
-
-[node name="boton5" parent="Botones" instance=ExtResource("5_m1spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032316446, 1.1256564, -3.9570518)
-script = ExtResource("11_12y3n")
 
 [node name="boton6" parent="Botones" instance=ExtResource("5_m1spo")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.032316446, 1.1256564, -2.5578713)
