@@ -13,7 +13,7 @@ albedo_color = Color(0.40392157, 0.1764706, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o67g8"]
 material = SubResource("StandardMaterial3D_mvoyr")
-size = Vector3(0.1, 5.4, 0.5)
+size = Vector3(0.1, 1.4, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1gxc"]
 albedo_color = Color(0.40392157, 0.1764706, 0, 1)
@@ -56,61 +56,69 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49875265, 0.47309947)
 shape = SubResource("ConvexPolygonShape3D_20d3g")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="CajaRojas"]
-transform = Transform3D(1, 0, 0, 0, 1.7319958, 0, 0, 0, 1, -0.21252418, 4.742, -0.0313026)
+transform = Transform3D(1, 0, 0, 0, 1.7319958, 0, 0, 0, 1, -0.21252418, 1.2790226, -0.0313026)
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_t1gxc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CajaRojas/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0062575, 0)
 collision_layer = 3
 collision_mask = 3
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="CajaRojas/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0062575, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CajaRojas/MeshInstance3D2/StaticBody3D2"]
 shape = SubResource("ConvexPolygonShape3D_y3wf7")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="CajaRojas"]
-transform = Transform3D(1, 0, 0, 0, 1.7319958, 0, 0, 0, 1, 0.2224428, 4.742, -0.017886817)
+transform = Transform3D(1, 0, 0, 0, 1.7319958, 0, 0, 0, 1, 0.2224428, 1.2790226, -0.017886817)
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_sri6a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CajaRojas/MeshInstance3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0062575, 0)
 collision_layer = 3
 collision_mask = 3
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="CajaRojas/MeshInstance3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0062575, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CajaRojas/MeshInstance3D6/StaticBody3D2"]
 shape = SubResource("ConvexPolygonShape3D_o67g8")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="CajaRojas"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.7319958, 0, -1, 0, -4.371139e-08, 0, 4.9, -0.238)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.7319958, 0, -1, 0, -4.371139e-08, 0, 1.4370226, -0.238)
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_y3wf7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CajaRojas/MeshInstance3D8"]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, 0, 2.0062575, 0)
 collision_layer = 3
 collision_mask = 3
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="CajaRojas/MeshInstance3D8"]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, 0, 2.0062575, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CajaRojas/MeshInstance3D8/StaticBody3D2"]
 shape = SubResource("ConvexPolygonShape3D_780xe")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="CajaRojas"]
-transform = Transform3D(-4.3711385e-08, 0, 1, 0, 1.7319958, 0, -1, 0, -4.3711385e-08, 0, 4.9, 0.208)
+transform = Transform3D(-4.3711385e-08, 0, 1, 0, 1.7319958, 0, -1, 0, -4.3711385e-08, 0, 1.4370226, 0.208)
 mesh = SubResource("BoxMesh_o67g8")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_g0uy4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CajaRojas/MeshInstance3D7"]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, 0, 2.0062575, 0)
 collision_layer = 3
 collision_mask = 3
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="CajaRojas/MeshInstance3D7"]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, 0, 2.0062575, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CajaRojas/MeshInstance3D7/StaticBody3D2"]
 shape = SubResource("ConvexPolygonShape3D_t1gxc")

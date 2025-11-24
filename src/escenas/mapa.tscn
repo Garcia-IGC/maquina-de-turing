@@ -159,7 +159,7 @@ transform = Transform3D(0.99999946, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0
 mesh = SubResource("BoxMesh_grw10")
 
 [node name="Servo2" type="MeshInstance3D" parent="Servomotores"]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.8868433, 0.3340384, 3.040733)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.7895442, 0.3340384, 3.040733)
 mesh = SubResource("BoxMesh_fuiq0")
 
 [node name="Cilindro" type="MeshInstance3D" parent="Servomotores/Servo2"]
@@ -172,4 +172,8 @@ mesh = SubResource("BoxMesh_ua0mu")
 
 [node name="Apollo" type="MeshInstance3D" parent="Servomotores/Servo2"]
 transform = Transform3D(0.9999992, 0, -1.0658141e-14, 0, 1, 0, 1.0658141e-14, 0, 0.9999992, -0.059280396, -0.74772036, -4.7683716e-07)
+mesh = SubResource("BoxMesh_grw10")
+
+[node name="Apollo" type="MeshInstance3D" parent="Servomotores/Servo2/Apollo"]
+transform = Transform3D(0.9999992, 0, -3.5527137e-14, 0, 1, 0, 3.5527137e-14, 0, 0.9999992, 0.19085884, -0.124660045, -0.17705584)
 mesh = SubResource("BoxMesh_grw10")
