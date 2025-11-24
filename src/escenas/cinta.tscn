@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dspccbgimg7yb"]
+[gd_scene load_steps=19 format=3 uid="uid://dspccbgimg7yb"]
 
 [ext_resource type="Script" uid="uid://dxn6yc12ov73b" path="res://src/codigo/cinta.gd" id="1_qky5x"]
 [ext_resource type="PackedScene" uid="uid://bfxuv1u3jpk4l" path="res://src/escenas/iman_de_cinta.tscn" id="3_qky5x"]
@@ -19,6 +19,13 @@ height = 0.4
 top_radius = 0.045
 bottom_radius = 0.045
 height = 1.16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bb845"]
+albedo_color = Color(0.42352942, 0.16078432, 0.09019608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jc60o"]
+material = SubResource("StandardMaterial3D_bb845")
+size = Vector3(0.665, 0.25, 0.495)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qky5x"]
 top_radius = 0.22
@@ -101,6 +108,10 @@ skeleton = NodePath("../Rodillo")
 
 [node name="StepperMotor" parent="." instance=ExtResource("3_rxdua")]
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -0.76709414, -0.47015202, 34.664772)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StepperMotor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00061035156, -0.34836662, 0.011798084)
+mesh = SubResource("BoxMesh_jc60o")
 
 [node name="PoleaDentada" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -0.36363187, -0.29518884, 35.793354)

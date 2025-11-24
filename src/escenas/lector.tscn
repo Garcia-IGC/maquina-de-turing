@@ -1,12 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://btivvyu0y3vkr"]
+[gd_scene load_steps=10 format=3 uid="uid://btivvyu0y3vkr"]
 
 [ext_resource type="Script" uid="uid://d4klkyfr5b2id" path="res://src/codigo/lector.gd" id="1_are13"]
 [ext_resource type="Script" uid="uid://uhawy31tlnus" path="res://src/codigo/area_3d (2).gd" id="1_gtxco"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_are13"]
+albedo_color = Color(0.27450982, 0.14901961, 0.16078432, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_kqljf"]
+material = SubResource("StandardMaterial3D_are13")
 size = Vector3(0.4, 5, 0.4)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5judi"]
+albedo_color = Color(0.27387738, 0.15049723, 0.15954772, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_gtxco"]
+material = SubResource("StandardMaterial3D_5judi")
 size = Vector3(0.4, 0.7, 0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_are13"]
