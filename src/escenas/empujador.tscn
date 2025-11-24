@@ -3,17 +3,17 @@
 [ext_resource type="Script" uid="uid://bqpkod5oaj8gv" path="res://static_body_3d.gd" id="1_jwr5u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tb8mt"]
-size = Vector3(0.7, 0.05, 0.05)
+size = Vector3(1, 0.05, 0.05)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwr5u"]
 albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q3uu8"]
 material = SubResource("StandardMaterial3D_jwr5u")
-size = Vector3(0.7, 0.1, 0.1)
+size = Vector3(1, 0.1, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jwr5u"]
-size = Vector3(0.7, 0.05, 0.05)
+size = Vector3(1, 0.05, 0.05)
 
 [node name="Empujador" type="StaticBody3D"]
 collision_layer = 3
