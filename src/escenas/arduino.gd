@@ -9,7 +9,7 @@ extends StaticBody3D
 var estado_actual: int = 0
 var posicion_cabezal: int = 0
 
-@export var tiempo_mov_cinta: float = 8.75
+@export var tiempo_mov_cinta: float = 8.70
 @export var velocidad_cinta: float = 0.05
 
 var matriz_de_suma = [
