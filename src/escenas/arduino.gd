@@ -12,13 +12,13 @@ var posicion_cabezal: int = 0
 @export var velocidad_cinta: float = 0.05
 
 var matriz_de_suma = [
-	[ ["rojo", 1, "R"], ["rojo", 0, "R"], ["nada", 4, "nada"] ],
+	[ ["rojo", 1, "R"], ["rojo", 0, "R"], ["nada", 0, "R"] ],
 	[ ["blanco", 4, "nada"], ["rojo", 1, "R"], ["nada", 2, "L"] ],
 	[ ["nada", 4, "nada"], ["nada", 3, "R"], ["nada", 4, "nada"] ]
 ]
 
 var matriz_de_resta = [
-	[ ["blanco",1,"R"], ["rojo",0,"R"], ["nada",7,"nada"] ],
+	[ ["blanco",1,"R"], ["rojo",0,"R"], ["nada",0,"R"] ],
 	[ ["blanco",7,"nada"], ["rojo",1,"R"], ["nada",2,"L"] ],
 	[ ["nada",6,"R"], ["nada",3,"L"], ["nada",7,"nada"] ],
 	[ ["blanco",4,"L"], ["rojo",3,"L"], ["nada",7,"nada"] ],
